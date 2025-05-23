@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -201,7 +201,7 @@ public class userLoginF extends javax.swing.JFrame {
 
     String sql = "SELECT u_id, u_fname, u_lname, u_username, u_email, u_status FROM tbl_users";
 
-    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/money_remittance", "root", "");
+    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/loanapp", "root", "");
          PreparedStatement pst = con.prepareStatement(sql);
          ResultSet rs = pst.executeQuery()) {
 
@@ -235,7 +235,7 @@ public class userLoginF extends javax.swing.JFrame {
     if (confirm == JOptionPane.YES_OPTION) {
         String sql = "DELETE FROM tbl_users WHERE u_id=?";
 
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/money_remittance", "root", "");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/loanapp", "root", "");
              PreparedStatement pst = con.prepareStatement(sql)) {
 
             pst.setInt(1, userId);
